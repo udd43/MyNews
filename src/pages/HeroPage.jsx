@@ -2,8 +2,12 @@ import { useMemo } from 'react';
 import { CONFIG } from '../lib/config';
 import FlowText from '../components/FlowText';
 import CategoryStats from '../components/CategoryStats';
+import { useMediaQuery } from '../hooks/useMediaQuery';
+import MobileHome from './MobileHome';
 
 export default function HeroPage({ articles }) {
+  const isMobile = useMediaQuery('(max-width: 768px)');
+
   const heroPicks = useMemo(() => {
     const byCategory = {
       dev: articles.filter((a) => a.category === 'dev'),
@@ -24,6 +28,10 @@ export default function HeroPage({ articles }) {
     }
     return picks;
   }, [articles]);
+
+  if (isMobile) {
+    return <MobileHome articles={articles} />;
+  }
 
   return (
     <section className="hero">
