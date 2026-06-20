@@ -13,6 +13,7 @@
   --accent-dev: #00d4ff;
   --accent-us: #ff6b6b;
   --accent-kr: #00c896;
+  --accent-game: #a855f7;
   --font-sans: 'Inter', 'Noto Sans KR', -apple-system, sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-dm: 'DM Serif Display', Georgia, serif;
@@ -182,6 +183,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .cp-us .li-src { color: var(--accent-us); }
 .cp-kr .cat-title { color: var(--accent-kr); }
 .cp-kr .li-src { color: var(--accent-kr); }
+.cp-game .cat-title { color: var(--accent-game); }
+.cp-game .li-src { color: var(--accent-game); }
 
 /* ===== Empty ===== */
 .empty { text-align: center; padding: 80px 20px; }
