@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom';
 import { CONFIG } from '../lib/config';
 
 const CategoryStats = memo(function CategoryStats({ articles }) {
-  const counts = {
-    dev: articles.filter((a) => a.category === 'dev').length,
-    us: articles.filter((a) => a.category === 'us').length,
-    kr: articles.filter((a) => a.category === 'kr').length,
-  };
+  const counts = articles.reduce((acc, a) => {
+    if (a.category) acc[a.category] = (acc[a.category] || 0) + 1;
+    return acc;
+  }, {});
 
   return (
     <div className="hero-cats">

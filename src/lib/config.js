@@ -28,6 +28,11 @@ export const CONFIG = {
       sub: '정치 · 사건사고 · 핫뉴스',
       shortDesc: '정치 · 사건사고 · 핫뉴스',
     },
+    movie: {
+      label: 'Movie',
+      sub: '국내외 영화 · 할리우드 소식',
+      shortDesc: '국내외 영화 뉴스',
+    },
     game: {
       url: 'https://news.google.com/rss/search?q=(PC%EA%B2%8C%EC%9E%84+OR+%EC%BD%98%EC%86%94%EA%B2%8C%EC%9E%84+OR+%EC%8A%A4%ED%8C%80+OR+%EB%B0%B8%EB%B8%8C+OR+%EB%A3%A8%EB%A6%AC%EC%9B%B9)&hl=ko&gl=KR&ceid=KR:ko',
       type: 'rss',

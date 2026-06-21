@@ -9,6 +9,7 @@ export default function MobileHome({ articles }) {
     { id: 'dev', label: '개발' },
     { id: 'us', label: '미국' },
     { id: 'kr', label: '국내' },
+    { id: 'movie', label: '영화' },
     { id: 'game', label: '게임' },
   ];
 

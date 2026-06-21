@@ -13,12 +13,13 @@ export default function HeroPage({ articles }) {
       dev: articles.filter((a) => a.category === 'dev'),
       us: articles.filter((a) => a.category === 'us'),
       kr: articles.filter((a) => a.category === 'kr'),
+      movie: articles.filter((a) => a.category === 'movie'),
       game: articles.filter((a) => a.category === 'game'),
     };
 
     const picks = [];
-    const sources = [byCategory.dev, byCategory.us, byCategory.kr, byCategory.game];
-    const maxPer = Math.ceil(CONFIG.heroPickCount / 4);
+    const sources = [byCategory.dev, byCategory.us, byCategory.kr, byCategory.movie, byCategory.game];
+    const maxPer = Math.ceil(CONFIG.heroPickCount / 5);
 
     for (let i = 0; i < maxPer; i++) {
       for (const src of sources) {

@@ -20,6 +20,9 @@ const Nav = memo(function Nav() {
         <NavLink to="/kr" className={({ isActive }) => (isActive ? 'on' : '')}>
           KR
         </NavLink>
+        <NavLink to="/movie" className={({ isActive }) => (isActive ? 'on' : '')}>
+          Movie
+        </NavLink>
         <NavLink to="/game" className={({ isActive }) => (isActive ? 'on' : '')}>
           Game
         </NavLink>

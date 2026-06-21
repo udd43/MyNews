@@ -17,6 +17,18 @@ const FEEDS = {
     type: 'rss',
     translate: false,
   },
+  movie_kr: {
+    url: 'https://news.google.com/rss/search?q=%ED%95%9C%EA%B5%AD%EC%98%81%ED%99%94+OR+%EA%B5%AD%EB%82%B4%EC%98%81%ED%99%94+OR+%EA%B7%B9%EC%9E%A5%EA%B0%80&hl=ko&gl=KR&ceid=KR:ko',
+    type: 'rss',
+    translate: false,
+    categoryId: 'movie',
+  },
+  movie_us: {
+    url: 'https://variety.com/v/film/feed/',
+    type: 'rss',
+    translate: true,
+    categoryId: 'movie',
+  },
   game: {
     url: 'https://news.google.com/rss/search?q=(PC%EA%B2%8C%EC%9E%84+OR+%EC%BD%98%EC%86%94%EA%B2%8C%EC%9E%84+OR+%EC%8A%A4%ED%8C%80+OR+%EB%B0%B8%EB%B8%8C+OR+%EB%A3%A8%EB%A6%AC%EC%9B%B9)&hl=ko&gl=KR&ceid=KR:ko',
     type: 'rss',
@@ -139,7 +151,7 @@ async function processFeed(category, feedConfig) {
       const cleanDesc = cleanText(description);
 
       return {
-        category,
+        category: feedConfig.categoryId || category,
         title: cleanText(title),
         description: cleanDesc.length > 200 ? cleanDesc.slice(0, 200) + '…' : cleanDesc,
         link,

@@ -14,6 +14,7 @@
   --accent-us: #ff6b6b;
   --accent-kr: #00c896;
   --accent-game: #a855f7;
+  --accent-movie: #eab308;
   --font-sans: 'Inter', 'Noto Sans KR', -apple-system, sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-dm: 'DM Serif Display', Georgia, serif;
@@ -188,6 +189,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .cp-kr .li-src { color: var(--accent-kr); }
 .cp-game .cat-title { color: var(--accent-game); }
 .cp-game .li-src { color: var(--accent-game); }
+.cp-movie .cat-title { color: var(--accent-movie); }
+.cp-movie .li-src { color: var(--accent-movie); }
 
 /* =============================================================
    ARTICLE VIEWER PAGE
