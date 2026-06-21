@@ -19,7 +19,7 @@ const FlowText = memo(function FlowText({ articles }) {
       return (
         <span key={`${article.category}-${i}`}>
           <Link
-            className={`flow-link ${FONT_CLASSES[i % FONT_CLASSES.length]}`}
+            className={`flow-link ${FONT_CLASSES[i % FONT_CLASSES.length]} ${article.isBreaking ? 'flow-breaking' : ''}`}
             to={articleUrl}
           >
             {article.title}

@@ -18,8 +18,12 @@ export default function HeroPage({ articles }) {
     };
 
     const picks = [];
+    const breakingNews = articles.filter(a => a.isBreaking);
     const sources = [byCategory.dev, byCategory.us, byCategory.kr, byCategory.movie, byCategory.game];
     const maxPer = Math.ceil(CONFIG.heroPickCount / 5);
+
+    // Push breaking news first
+    picks.push(...breakingNews);
 
     for (let i = 0; i < maxPer; i++) {
       for (const src of sources) {

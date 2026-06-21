@@ -182,6 +182,14 @@ async function processFeed(category, feedConfig) {
       }
     }
 
+    for (const article of articles) {
+      const isBreakingTitle = /\[속보\]|\[긴급\]|속보:|긴급:|breaking news|urgent/i.test(article.title) || 
+                              /\[속보\]|\[긴급\]|속보:|긴급:|breaking news|urgent/i.test(article.originalTitle || '');
+      if (isBreakingTitle) {
+        article.isBreaking = true;
+      }
+    }
+
     return articles;
   } catch (error) {
     console.error(`Error processing feed ${category}:`, error);

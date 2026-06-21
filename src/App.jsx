@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Nav from './components/Nav';
 import Loader from './components/Loader';
 import Toast from './components/Toast';
+import Ticker from './components/Ticker';
 import { useNews } from './hooks/useNews';
 
 const HeroPage = lazy(() => import('./pages/HeroPage'));
@@ -26,6 +27,7 @@ export default function App() {
       <Loader visible={loading} />
       <Toast />
       <Nav />
+      <Ticker articles={articles} />
       <Suspense fallback={<Loader visible />}>
         <Routes>
           <Route path="/" element={<HeroPage articles={articles} />} />

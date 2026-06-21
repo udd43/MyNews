@@ -53,7 +53,7 @@ const ListItem = memo(function ListItem({ article, index }) {
   if (isMobile) {
     return (
       <div
-        className={`list-item mobile-item ${expanded ? 'expanded' : ''}`}
+        className={`list-item mobile-item ${expanded ? 'expanded' : ''} ${article.isBreaking ? 'breaking-pulse' : ''}`}
         style={{ animationDelay: `${0.025 * index}s` }}
         onClick={() => setExpanded(!expanded)}
       >
@@ -66,6 +66,7 @@ const ListItem = memo(function ListItem({ article, index }) {
                 <span className="li-dot" />
                 <span className="li-time">{timeAgo}</span>
                 {article.translated && <span className="li-tr">번역됨</span>}
+                {article.isBreaking && <span className="li-breaking-badge">[속보]</span>}
               </div>
               <a 
                 href={article.link} 
@@ -99,7 +100,7 @@ const ListItem = memo(function ListItem({ article, index }) {
 
   return (
     <Link
-      className="list-item"
+      className={`list-item ${article.isBreaking ? 'breaking-pulse' : ''}`}
       to={articleUrl}
       style={{ animationDelay: `${0.025 * index}s` }}
     >
@@ -111,6 +112,7 @@ const ListItem = memo(function ListItem({ article, index }) {
             <span className="li-dot" />
             <span className="li-time">{timeAgo}</span>
             {article.translated && <span className="li-tr">번역됨</span>}
+            {article.isBreaking && <span className="li-breaking-badge">[속보]</span>}
           </div>
           <h2 className="li-title">{article.title}</h2>
           {article.description && <p className="li-desc">{article.description}</p>}
