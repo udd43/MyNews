@@ -47,6 +47,32 @@ function extractDomain(urlStr) {
   }
 }
 
+function extractImageUrl(item, descriptionHtml) {
+  if (item['media:content'] && item['media:content']['@_url']) {
+    return item['media:content']['@_url'];
+  }
+  if (item['media:thumbnail'] && item['media:thumbnail']['@_url']) {
+    return item['media:thumbnail']['@_url'];
+  }
+  
+  if (item.enclosure) {
+    const encs = Array.isArray(item.enclosure) ? item.enclosure : [item.enclosure];
+    for (const enc of encs) {
+      if (enc['@_type'] && enc['@_type'].startsWith('image/') && enc['@_url']) {
+        return enc['@_url'];
+      }
+    }
+  }
+  
+  if (descriptionHtml) {
+    const match = descriptionHtml.match(/<img[^>]+src=["']([^"']+)["']/i);
+    if (match && match[1]) {
+      return match[1];
+    }
+  }
+  return null;
+}
+
 async function translateText(text) {
   if (!text || text.length < 3) return text;
   if (/[가-힣]/.test(text) && !/[a-zA-Z]{3,}/.test(text)) return text;
@@ -104,11 +130,12 @@ async function processFeed(category, feedConfig) {
       } else {
         title = item.title || '';
         link = item.link || '';
-        description = item.description || '';
+        description = item.description || item['content:encoded'] || '';
         date = item.pubDate || '';
         source = item.source?.['#text'] || extractDomain(link);
       }
 
+      const imageUrl = extractImageUrl(item, description);
       const cleanDesc = cleanText(description);
 
       return {
@@ -118,6 +145,7 @@ async function processFeed(category, feedConfig) {
         link,
         date,
         source,
+        imageUrl,
         translated: false,
       };
     }).filter(a => a.title);
