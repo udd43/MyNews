@@ -249,6 +249,24 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .mobile-list .li-thumb { width: 80px; height: 80px; border-radius: 8px; }
 .mobile-list .li-content-wrapper { gap: 12px; }
 
+/* Expanded Mobile Item */
+.mobile-item { flex-direction: column; cursor: pointer; transition: background 0.3s var(--ease); }
+.mobile-item-header { display: flex; width: 100%; align-items: flex-start; }
+.mobile-item-header .li-content-wrapper { flex: 1; padding: 18px 12px; }
+.mobile-item-header .li-num { padding-top: 22px; }
+.mobile-item.expanded { background: var(--bg-surface); }
+.expanded-content { padding: 0 16px 24px 56px; animation: flowIn 0.4s var(--ease) both; }
+.expanded-msg { font-size: 13px; color: var(--text-dim); text-align: center; padding: 20px 0; }
+.expanded-msg.error { color: var(--accent-us); }
+.inline-html { font-size: 15px; line-height: 1.7; color: #d1d5db; }
+.inline-html img { max-width: 100%; height: auto; border-radius: 6px; margin: 20px 0; display: block; }
+.inline-html h1, .inline-html h2, .inline-html h3 { margin: 24px 0 12px; font-size: 18px; line-height: 1.4; color: var(--text); }
+.inline-html p { margin-bottom: 16px; }
+.inline-html a { color: var(--accent-dev); text-decoration: underline; text-underline-offset: 3px; }
+.inline-html ul, .inline-html ol { margin-bottom: 16px; padding-left: 20px; }
+.inline-html li { margin-bottom: 8px; }
+.li-title { display: block; } /* Ensure anchor tag behaves block-like */
+
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
