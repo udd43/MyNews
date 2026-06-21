@@ -189,6 +189,39 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .cp-game .cat-title { color: var(--accent-game); }
 .cp-game .li-src { color: var(--accent-game); }
 
+/* =============================================================
+   ARTICLE VIEWER PAGE
+   ============================================================= */
+.article-page { min-height: 100vh; padding: 100px 20px 80px; max-width: 800px; margin: 0 auto; animation: flowIn 0.6s var(--ease) both; }
+.ap-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+.ap-back { font-size: 13px; color: var(--text-muted); cursor: pointer; transition: color 0.3s; }
+.ap-back:hover { color: var(--text); }
+.ap-btn-outline { font-size: 12px; font-weight: 600; padding: 6px 14px; border: 1px solid var(--border); border-radius: 100px; color: var(--text-dim); transition: all 0.3s; }
+.ap-btn-outline:hover { color: var(--text); border-color: var(--text); }
+.ap-title { font-family: var(--font-serif); font-size: clamp(28px, 5vw, 48px); line-height: 1.25; margin-bottom: 20px; font-weight: 900; letter-spacing: -1px; word-break: keep-all; }
+.ap-byline { font-size: 13px; color: var(--text-muted); margin-bottom: 40px; font-family: var(--font-kr); }
+
+/* Parsed HTML content styling */
+.ap-html { font-size: 17px; line-height: 1.8; color: #d1d5db; font-family: var(--font-kr); word-break: keep-all; }
+.ap-html p { margin-bottom: 28px; }
+.ap-html img { max-width: 100%; height: auto; border-radius: 8px; margin: 32px 0; display: block; }
+.ap-html a { color: var(--accent-dev); text-decoration: underline; text-underline-offset: 4px; }
+.ap-html h1, .ap-html h2, .ap-html h3, .ap-html h4 { font-family: var(--font-sans); color: var(--text); margin: 48px 0 24px; font-weight: 700; line-height: 1.4; letter-spacing: -0.5px; }
+.ap-html h2 { font-size: 24px; }
+.ap-html h3 { font-size: 20px; }
+.ap-html ul, .ap-html ol { margin-bottom: 28px; padding-left: 20px; }
+.ap-html li { margin-bottom: 12px; }
+.ap-html blockquote { border-left: 3px solid var(--border); padding-left: 20px; color: var(--text-muted); font-style: italic; margin: 32px 0; }
+.ap-html figure { margin: 32px 0; }
+.ap-html figcaption { font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 12px; }
+
+.ap-footer { margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--border); text-align: center; }
+.ap-btn { display: inline-block; padding: 16px 32px; background: var(--text); color: var(--bg); font-weight: 700; border-radius: 100px; font-size: 15px; transition: opacity 0.3s; }
+.ap-btn:hover { opacity: 0.8; }
+.article-page.error { text-align: center; }
+.ap-error { margin-top: 80px; }
+.ap-error p { margin-bottom: 30px; font-size: 16px; color: var(--text-dim); }
+
 /* ===== Empty ===== */
 .empty { text-align: center; padding: 80px 20px; }
 .empty-ico { font-size: 40px; margin-bottom: 12px; }

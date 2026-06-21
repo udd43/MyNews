@@ -1,4 +1,5 @@
 import { memo, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { FONT_CLASSES } from '../lib/config';
 
 const FlowText = memo(function FlowText({ articles }) {
@@ -11,19 +12,22 @@ const FlowText = memo(function FlowText({ articles }) {
       );
     }
 
-    return articles.map((article, i) => (
-      <span key={`${article.category}-${i}`}>
-        <a
-          className={`flow-link ${FONT_CLASSES[i % FONT_CLASSES.length]}`}
-          href={article.link}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {article.title}
-        </a>
-        <span className="flow-sep">{i < articles.length - 1 ? '. ' : '.'}</span>
-      </span>
-    ));
+    return articles.map((article, i) => {
+      const trParam = article.translated ? '1' : '0';
+      const articleUrl = `/article?url=${encodeURIComponent(article.link)}&tr=${trParam}`;
+
+      return (
+        <span key={`${article.category}-${i}`}>
+          <Link
+            className={`flow-link ${FONT_CLASSES[i % FONT_CLASSES.length]}`}
+            to={articleUrl}
+          >
+            {article.title}
+          </Link>
+          <span className="flow-sep">{i < articles.length - 1 ? '. ' : '.'}</span>
+        </span>
+      );
+    });
   }, [articles]);
 
   return <div className="flow-text">{content}</div>;

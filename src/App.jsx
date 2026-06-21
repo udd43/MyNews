@@ -7,6 +7,7 @@ import { useNews } from './hooks/useNews';
 
 const HeroPage = lazy(() => import('./pages/HeroPage'));
 const CategoryPage = lazy(() => import('./pages/CategoryPage'));
+const ArticlePage = lazy(() => import('./pages/ArticlePage'));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -28,6 +29,7 @@ export default function App() {
       <Suspense fallback={<Loader visible />}>
         <Routes>
           <Route path="/" element={<HeroPage articles={articles} />} />
+          <Route path="/article" element={<ArticlePage />} />
           <Route path="/:category" element={<CategoryPage articles={articles} />} />
         </Routes>
       </Suspense>

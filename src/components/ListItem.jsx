@@ -1,15 +1,17 @@
 import { memo } from 'react';
+import { Link } from 'react-router-dom';
 import { relativeTime } from '../lib/utils';
 
 const ListItem = memo(function ListItem({ article, index }) {
   const timeAgo = relativeTime(article.date);
 
+  const trParam = article.translated ? '1' : '0';
+  const articleUrl = `/article?url=${encodeURIComponent(article.link)}&tr=${trParam}`;
+
   return (
-    <a
+    <Link
       className="list-item"
-      href={article.link}
-      target="_blank"
-      rel="noopener noreferrer"
+      to={articleUrl}
       style={{ animationDelay: `${0.025 * index}s` }}
     >
       <span className="li-num">{String(index + 1).padStart(2, '0')}</span>
@@ -31,7 +33,7 @@ const ListItem = memo(function ListItem({ article, index }) {
         )}
       </div>
       <span className="li-arrow">→</span>
-    </a>
+    </Link>
   );
 });
 
