@@ -1,8 +1,15 @@
-import { memo, useMemo } from 'react';
+import { memo, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Ticker = memo(function Ticker({ articles }) {
   const breakingArticles = useMemo(() => articles.filter(a => a.isBreaking), [articles]);
+
+  useEffect(() => {
+    if (breakingArticles && breakingArticles.length > 0) {
+      document.body.classList.add('has-ticker');
+      return () => document.body.classList.remove('has-ticker');
+    }
+  }, [breakingArticles]);
 
   if (!breakingArticles || breakingArticles.length === 0) return null;
 

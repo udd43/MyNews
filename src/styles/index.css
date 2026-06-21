@@ -322,7 +322,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ===== Mobile Home & Tabs ===== */
 .mobile-home { padding: 90px 16px 40px; min-height: 100vh; }
 .mobile-tabs-container {
-  position: sticky; top: 60px; z-index: 90;
+  position: sticky; top: 43px; z-index: 90;
+}
+body.has-ticker .mobile-tabs-container {
+  top: 78px; /* 43px (nav) + 35px (ticker) */
+}
+.mobile-tabs-container {
   background: rgba(0,0,0,0.9);
   backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
   margin: -20px -16px 20px; padding: 10px 16px;
@@ -363,6 +368,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .nav { padding: 14px 20px; }
+  .ticker-container { top: 43px; }
   .nav-links { gap: 16px; }
   .nav-links a { font-size: 11px; }
   .nav-time { display: none; }
