@@ -1,6 +1,7 @@
 /* ===== MyNews — Continuous Flow Typography ===== */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Dongle:wght@700&family=Gowun+Batang:wght@700&family=Hahmlet:wght@700&family=Jua&family=Nanum+Myeongjo:wght@800&family=Noto+Serif+KR:wght@900&family=Song+Myung&display=swap');
 
 :root {
   --bg: #000000;
@@ -101,19 +102,19 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   user-select: none;
 }
 
-/* ===== Font style variations ===== */
-.f1 { font-family: var(--font-serif); font-weight: 900; font-style: normal; }
-.f2 { font-family: var(--font-serif); font-weight: 400; font-style: italic; }
-.f3 { font-family: var(--font-grotesk); font-weight: 700; font-style: normal; }
-.f4 { font-family: var(--font-sans); font-weight: 900; font-style: normal; letter-spacing: -2px; }
-.f5 { font-family: var(--font-dm); font-weight: 400; font-style: italic; }
-.f6 { font-family: var(--font-crimson); font-weight: 700; font-style: normal; }
-.f7 { font-family: var(--font-kr); font-weight: 800; font-style: normal; }
-.f8 { font-family: var(--font-serif); font-weight: 700; font-style: normal; letter-spacing: -2px; }
-.f9 { font-family: var(--font-crimson); font-weight: 400; font-style: italic; }
-.f10 { font-family: var(--font-grotesk); font-weight: 500; font-style: normal; letter-spacing: -1px; }
-.f11 { font-family: var(--font-dm); font-weight: 400; font-style: normal; }
-.f12 { font-family: var(--font-kr); font-weight: 600; font-style: normal; letter-spacing: -1.5px; }
+/* ===== Font style variations (10+ Fonts for Hero Flow Text) ===== */
+.f1 { font-family: 'Noto Serif KR', serif; font-weight: 900; }
+.f2 { font-family: 'Black Han Sans', sans-serif; font-weight: 400; }
+.f3 { font-family: 'Do Hyeon', sans-serif; font-weight: 400; }
+.f4 { font-family: 'Gowun Batang', serif; font-weight: 700; }
+.f5 { font-family: 'Hahmlet', serif; font-weight: 700; }
+.f6 { font-family: 'Jua', sans-serif; font-weight: 400; }
+.f7 { font-family: 'Nanum Myeongjo', serif; font-weight: 800; }
+.f8 { font-family: 'Song Myung', serif; font-weight: 400; }
+.f9 { font-family: 'Dongle', sans-serif; font-weight: 700; font-size: 1.3em; transform: translateY(0.1em); display: inline-block; line-height: 0.8; }
+.f10 { font-family: 'Noto Sans KR', sans-serif; font-weight: 900; letter-spacing: -2px; }
+.f11 { font-family: var(--font-serif); font-weight: 900; font-style: italic; }
+.f12 { font-family: var(--font-grotesk); font-weight: 700; letter-spacing: -2px; }
 
 /* Bottom category bar */
 .hero-cats {
